@@ -1,4 +1,4 @@
-# Exemplos de monoid com Typescript e Ramda
+# Exemplos de composição com Typescript e Ramda
 
 Install `yarn`:
 

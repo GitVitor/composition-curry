@@ -5,11 +5,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": " node_modules/.bin/nodemon --exec 'yarn run lint && node_modules/.bin/ts-node src/index.ts'",
+    "dev": " node_modules/.bin/nodemon --exec 'yarn run lint && yarn test'",
     "lint": "node_modules/.bin/tslint 'src/**/*.ts' -t verbose --force",
+    "test": "jest",
     "format": "prettier --write \"src/**/*.{ts}\""
   },
   "dependencies": {
+    "@types/jest": "^24.0.23",
     "@types/node": "^12.12.14",
     "nodemon": "^2.0.1",
     "ramda": "^0.26.1",
@@ -18,7 +20,13 @@
     "typescript": "^3.7.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.5",
+    "@babel/preset-typescript": "^7.7.4",
     "@types/ramda": "types/npm-ramda#dist",
-    "prettier": "1.19.1"
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "prettier": "1.19.1",
+    "ts-jest": "^24.2.0"
   }
 }
