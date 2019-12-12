@@ -5,7 +5,9 @@ import {
 } from './compositions'
 import employees from './mock'
 
-describe('should test each function', () => {
+import imperative from './imperative'
+
+xdescribe('should test each function', () => {
   it('should get databaseConnection', () => {
     const retrieve = GetDatabase()
     expect(retrieve).not.toBeUndefined()
@@ -24,5 +26,12 @@ describe('should test each function', () => {
     const employee = await GetEmployeeById(employeeId, connectionDb)
     const birthDate = GetEmployeeBirthDate(employee)
     expect(birthDate.toDateString()).toBe('Wed Sep 02 1953')
+  })
+})
+
+describe('should test imperative functions', () => {
+  it('should get employee birth date', async () => {
+    const birthDate = await imperative.GetEmployeeBirthDate()
+    expect(birthDate).toBe('Wed Sep 02 1953')
   })
 })
